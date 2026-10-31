@@ -1,0 +1,61 @@
+# Exemplos manuais para demonstrar operações do validador. Não são o corpus IBNs.
+# O alvo de block_host é um host inteiro; block_flow é sempre direcional.
+version: "3.1"
+nlu:
+  - intent: block_host
+    examples: |
+      - bloqueie o [host A]{"entity": "target", "value": "hosta"}
+      - bloqueie o [host B]{"entity": "target", "value": "hostb"}
+      - bloqueie o [host C]{"entity": "target", "value": "hostc"}
+      - bloquear [hosta](target)
+      - bloquear [hostb](target)
+      - isole o [hostc](target)
+      - isole o [hostd](target) da rede
+      - bloqueie todo o tráfego do [hosta](target)
+      - bloqueie todo o tráfego do [hostb](target)
+      - block [hosta](target)
+      - block [hostb](target)
+      - isolate [hostc](target) from the network
+      - block all traffic for [hostd](target)
+      - block the host [10.0.0.1](target)
+      - bloqueie o host [10.0.0.2](target)
+  - intent: block_flow
+    examples: |
+      - bloqueie o tráfego de [hosta](source) para [hostb](destination)
+      - bloqueie o tráfego de [hostb](source) para [hostc](destination)
+      - bloqueie o tráfego de [hostc](source) para [hostd](destination)
+      - bloquear acesso de [hosta](source) a [hostc](destination)
+      - bloquear acesso de [hostb](source) a [hostd](destination)
+      - impeça [hostc](source) de acessar [hostb](destination)
+      - impeça [hostd](source) de acessar [hosta](destination)
+      - block traffic from [hosta](source) to [hostb](destination)
+      - block traffic from [hostb](source) to [hostc](destination)
+      - deny access from [hostc](source) to [hostd](destination)
+      - deny access from [10.0.0.1](source) to [10.0.0.2](destination)
+      - bloqueie o tráfego de [10.0.0.3](source) para [10.0.0.4](destination)
+  - intent: allow_flow
+    examples: |
+      - permita tráfego de [hosta](source) para [hostb](destination)
+      - permita tráfego de [hostb](source) para [hostc](destination)
+      - crie um fluxo de [hostc](source) para [hostd](destination)
+      - crie um fluxo de [hosta](source) para [hostc](destination)
+      - crie um fluxo de [hosta](source) para [hostb](destination) com [30](bandwidth_mbps) Mbps
+      - crie um fluxo de [hostb](source) para [hostc](destination) com [20](bandwidth_mbps) Mbps
+      - garanta [100](bandwidth_mbps) Mbps de [hosta](source) para [hostc](destination)
+      - garanta [50](bandwidth_mbps) Mbps de [hostd](source) para [hostb](destination)
+      - allow traffic from [hosta](source) to [hostb](destination)
+      - allow traffic from [hostb](source) to [hostc](destination)
+      - create a flow from [hostc](source) to [hostd](destination) with [25](bandwidth_mbps) Mbps
+      - create a flow from [hosta](source) to [hostc](destination) with [40](bandwidth_mbps) Mbps
+      - allow traffic from [10.0.0.1](source) to [10.0.0.2](destination)
+      - permita tráfego de [10.0.0.3](source) para [10.0.0.4](destination)
+  - intent: out_of_scope
+    examples: |
+      - qual a previsão do tempo amanhã
+      - escreva uma receita de bolo
+      - what is the weather tomorrow
+      - write a poem about the ocean
+      - reinicie o switch
+      - mostre os contadores de erros
+      - update the switch firmware
+      - liste as interfaces da rede

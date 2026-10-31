@@ -1,0 +1,8 @@
+[
+  {"operation": "BLOCK_HOST", "target": "hosta"},
+  {"operation": "ALLOW_FLOW", "source": "hosta", "destination": "hostb", "bandwidth_mbps": 30},
+  {"operation": "ALLOW_FLOW", "source": "hosta", "destination": "hostc", "bandwidth_mbps": 30},
+  {"operation": "ALLOW_FLOW", "source": "hostb", "destination": "hostd"},
+  {"operation": "BLOCK_HOST", "target": "hostc"},
+  {"operation": "ALLOW_FLOW", "source": "hostb", "destination": "hostc"}
+]

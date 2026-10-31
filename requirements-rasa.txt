@@ -1,0 +1,3 @@
+# Ambiente Python 3.10 separado, pois Rasa OSS 3.6 não aceita Python 3.12.
+-r requirements.txt
+rasa==3.6.21

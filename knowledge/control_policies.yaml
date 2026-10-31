@@ -1,0 +1,8 @@
+# Host protegido não pode ser bloqueado nem participar de um fluxo bloqueado.
+protected_hosts: [hosta]
+# Deny prevalece sobre allow, independentemente da ordem das regras.
+# Sem uma regra allow correspondente, a decisão é negar.
+rules:
+  - {id: allow-lab-host-blocks, operation: BLOCK_HOST, effect: allow}
+  - {id: allow-lab-flow-blocks, operation: BLOCK_FLOW, effect: allow}
+  - {id: allow-lab-flows, operation: ALLOW_FLOW, effect: allow}

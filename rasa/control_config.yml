@@ -1,0 +1,19 @@
+# Configuração NLU de demonstração, adaptada do pipeline de Saha et al.
+# Conjunto operacional próprio em PT/EN; não é reprodução do benchmark IBNs.
+recipe: default.v1
+assistant_id: ibn-control-demo
+language: pt
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+    random_seed: 42
+    constrain_similarities: true
+  - name: EntitySynonymMapper

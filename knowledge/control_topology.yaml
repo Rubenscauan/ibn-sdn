@@ -1,0 +1,14 @@
+# Grafo de laboratório. Enlaces bidirecionais com capacidade compartilhada.
+# Ausência de bandwidth_mbps numa intenção significa nenhuma reserva de banda.
+hosts:
+  hosta: 10.0.0.1
+  hostb: 10.0.0.2
+  hostc: 10.0.0.3
+  hostd: 10.0.0.4
+switches: [s1, s2, s3]
+links:
+  - {source: hosta, target: s1, capacity_mbps: 1000}
+  - {source: hostb, target: s2, capacity_mbps: 1000}
+  - {source: hostc, target: s2, capacity_mbps: 1000}
+  - {source: hostd, target: s3, capacity_mbps: 1000}
+  - {source: s1, target: s2, capacity_mbps: 50}

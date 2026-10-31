@@ -1,6 +1,5 @@
-"""Pipeline inicial de NLP para Intent-Based Networking."""
+"""Validação contextual de intenções e simulação de estado de rede."""
 
-from .intent.models import NetworkIntent
-from .intent.parser import IntentParser, parse_intent
+from .control import ControlDecision, ControlIntent, NetworkState, SimulationController
 
-__all__ = ["IntentParser", "NetworkIntent", "parse_intent"]
+__all__ = ["ControlDecision", "ControlIntent", "NetworkState", "SimulationController"]

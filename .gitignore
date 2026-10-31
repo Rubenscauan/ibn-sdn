@@ -1,3 +1,18 @@
-models/*.joblib
 __pycache__/
 .pytest_cache/
+.venv/
+.venv-*/
+models/
+data/
+.rasa/
+.deepeval/
+.env
+.env.*
+# Artefatos gerados pelo compilador; os fontes LaTeX são versionados.
+artigo/*.aux
+artigo/*.bbl
+artigo/*.blg
+artigo/*.log
+artigo/*.out
+artigo/*.synctex.gz
+artigo/*.pdf
