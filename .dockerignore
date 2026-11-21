@@ -1,0 +1,13 @@
+**
+!Dockerfile
+!requirements.txt
+!requirements-benchmark.txt
+!benchmark.py
+!ibn_sdn/
+!ibn_sdn/**
+!examples/
+!examples/**
+!knowledge/
+!knowledge/**
+**/__pycache__/
+**/*.pyc

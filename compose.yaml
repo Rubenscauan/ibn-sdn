@@ -1,0 +1,9 @@
+services:
+  benchmark:
+    image: contextbench-ibn:demo
+    pull_policy: never
+    network_mode: none
+    volumes:
+      - ./examples:/app/examples:ro
+      - ./knowledge:/app/knowledge:ro
+      - ./results/benchmark:/app/results/benchmark

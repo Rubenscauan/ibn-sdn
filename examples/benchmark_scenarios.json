@@ -1,0 +1,17 @@
+[
+  {
+    "id": "sem-reserva",
+    "topology": "../knowledge/control_topology.yaml",
+    "policies": "../knowledge/control_policies.yaml",
+    "intents": "benchmark_intents.json"
+  },
+  {
+    "id": "reserva-de-40-mbps",
+    "topology": "../knowledge/control_topology.yaml",
+    "policies": "../knowledge/control_policies.yaml",
+    "intents": "benchmark_intents.json",
+    "reservations": [
+      {"path": ["hostc", "s2", "s1", "hosta"], "bandwidth_mbps": 40}
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "fluxo-30-mbps",
+    "intent": {
+      "operation": "ALLOW_FLOW",
+      "source": "hosta",
+      "destination": "hostb",
+      "bandwidth_mbps": 30
+    }
+  },
+  {
+    "id": "bloqueio-direcional",
+    "intent": {"operation": "BLOCK_FLOW", "source": "hostb", "destination": "hostc"},
+    "expected_code": "VALIDATED"
+  },
+  {
+    "id": "host-protegido",
+    "intent": {"operation": "BLOCK_HOST", "target": "hosta"},
+    "expected_code": "HOST_PROTECTED"
+  }
+]

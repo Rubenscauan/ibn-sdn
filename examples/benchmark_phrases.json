@@ -1,0 +1,37 @@
+[
+  {
+    "id": "protected-host",
+    "text": "bloqueie o host A",
+    "expected_intent": {"operation": "BLOCK_HOST", "target": "hosta"},
+    "expected_code": "HOST_PROTECTED"
+  },
+  {
+    "id": "allowed-block",
+    "text": "bloqueie o host B",
+    "expected_intent": {"operation": "BLOCK_HOST", "target": "hostb"},
+    "expected_code": "VALIDATED"
+  },
+  {
+    "id": "available-bandwidth",
+    "text": "crie um fluxo de hosta para hostb com 30 Mbps",
+    "expected_intent": {"operation": "ALLOW_FLOW", "source": "hosta", "destination": "hostb", "bandwidth_mbps": 30},
+    "expected_code": "VALIDATED"
+  },
+  {
+    "id": "insufficient-bandwidth",
+    "text": "garanta 100 Mbps de hosta para hostc",
+    "expected_intent": {"operation": "ALLOW_FLOW", "source": "hosta", "destination": "hostc", "bandwidth_mbps": 100},
+    "expected_code": "INSUFFICIENT_CAPACITY"
+  },
+  {
+    "id": "disconnected",
+    "text": "permita tráfego de hostb para hostd",
+    "expected_intent": {"operation": "ALLOW_FLOW", "source": "hostb", "destination": "hostd"},
+    "expected_code": "NO_PATH"
+  },
+  {
+    "id": "unsupported-port",
+    "text": "bloqueie o hosta na porta 80",
+    "expected_code": "INTERPRETATION_ERROR"
+  }
+]
